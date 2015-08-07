@@ -141,7 +141,7 @@ while(<HIER_REPORT>)
     $line=<HIER_REPORT>;
     print $v_report $line;
   }
-  elsif($line =~ m/module/)
+  elsif(($line =~ m/module/)&&($line !~ m/endmodule/))
   {
     print $v_report $line."\n";
   }
@@ -160,9 +160,9 @@ while(<HIER_REPORT>)
     else
     {
       print $v_report $line;
-      $line=<HIER_REPORT>;
-      $hold_location=tell($line);
-      seek(HIER_REPORT,0,0);
+$line=<HIER_REPORT>;
+#     $hold_location=tell($line);
+#seek(HIER_REPORT,0,0);
       while(<HIER_REPORT>)
       {
         $inst_name=$_;
@@ -174,7 +174,7 @@ while(<HIER_REPORT>)
           last;
         }
       }
-      seek(HIER_REPORT,$hold_location,0);
+#      seek(HIER_REPORT,$hold_location,0);
       if($inst_not_found==1)
       {
         print $v_report "**Error:  instance not found\n";
