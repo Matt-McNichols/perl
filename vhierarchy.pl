@@ -2,8 +2,26 @@
 use warnings;
 use strict;
 
+my @list;
+my $i=0;
+my $file_name_top;
 
-if($#ARGV > 2 or $ARGV[0]=~/-*help/){
+
+if($#ARGV==-1)
+{
+  @list= `ls`;
+  while($list[$i])
+  {
+    chomp($list[$i]);
+    if ($list[$i] =~ m/.*\.v/)
+    {
+my $call_wo_arg = get_hier($list[$i]);
+    }
+    $i++;
+  }
+  exit;
+}
+elsif($#ARGV > 2 or $ARGV[0]=~/-*help/){
 print"
 This script creates a header for verilog or C files and makes a simple
 code skeleton for the selected code type. If the file you are attempting
@@ -18,9 +36,24 @@ will just prepend the header to the existing file.
 
 ";
 }
+elsif ($#ARGV==0)
+{
+$file_name_top = $ARGV[0];
+my $call_w_arg = get_hier($file_name_top);
+}
+else
+{
+  print"you entered something wrong";
+  exit;
+}
+#start of function
 
 
-my $file_name = $ARGV[0];
+
+sub get_hier
+{
+my $file_name=$_[0];
+#print $file_name;
 
 if((-e $file_name) || (-s $file_name)){
   print"File Exists \n";
@@ -35,7 +68,6 @@ else{
 }
 
 
-
 #####  Phase one add file to report.txt
 #
 my $line;
@@ -45,7 +77,7 @@ my $in_inst=0;
 
 
 open(my $file_out, '>>', 'hierarchy_report.txt');
-print $file_out "File Name:  ".$file_name."\n";
+print $file_out "\n\nFile Name:  ".$file_name."\n";
 while(<CODE_FILE>)
 {
 #The text being printed to output file
@@ -90,7 +122,7 @@ while(<CODE_FILE>)
       print $file_out "\t".$line."\n";
     }
   }
-  elsif($line =~ '.\S\s\S*\(' and $in_module==1 and $module_ports==0 and $in_inst==0 and !($line =~ m/(if|else if|while|@|for|assign|=|case|\/\/|\/\*|\*\/)|function/ ))
+  elsif($line =~ '.\S\s\S*\(' and $in_module==1 and $module_ports==0 and $in_inst==0 and !($line =~ m/\Wif\(|\Wif\s\(|begin|else if|while|@|for|assign|=|case|\/\/|\/\*|\*\/|function|&|\-|\(\(|\)\)|\`|!/ ))
   {
     if($in_inst== 0 and !($line =~ '.*\);'))
     {
@@ -137,6 +169,7 @@ while(<HIER_REPORT>)
 #print file name and module
   if($line =~ m/File Name/)
   {
+    print $v_report "---------------------------\n";
     print $v_report $line;
     $line=<HIER_REPORT>;
     print $v_report $line;
@@ -167,7 +200,7 @@ $line=<HIER_REPORT>;
       {
         $inst_name=$_;
 #print $v_report $inst_name;
-        if($inst_name !~ /\.|\(|\)|\/\/|^$|^\s*$/)
+        if($inst_name !~ /\.|\)$|\)\s*$|\/\/|^$|^\s*$/)
         {
           print $v_report $inst_name."\n";
           $inst_not_found=0;
@@ -185,14 +218,14 @@ $line=<HIER_REPORT>;
   elsif($line=~/endmodule/)
   {
     print $v_report $line;
-    print $v_report "---------------------------\n";
+    print $v_report "---------------------------\n\n\n";
   }
  
 }
 close HIER_REPORT;
 close $v_report;
 
-
+}
 
 
 
