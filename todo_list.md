@@ -1,15 +1,10 @@
-* <0,1>---  test
-	* <0,1,1>---  this time should work
-	* <0,1,8>---  test
-	* <0,1,10>---  test
-* <0,2>---  test
-	* <0,2,15>---  test
-* <0,3>---  test
-* <0,1>---  test
-	* <0,1,1>---  this time should work
-		* <0,1,1,1>---  deeper one should work too
-	* <0,1,8>---  test
-	* <0,1,10>---  test
-* <0,2>---  test
-	* <0,2,15>---  test
-* <0,3>---  test
+* <0,0>---  home
+	* <0,0,0>---  dentist appt
+	* <0,0,1>---  apply for cs major
+* <0,1>---  work
+	* <0,1,0>---  MTS slides
+	* <0,1,1>---  MSI meeting with luis 9:30 AM
+	* <0,1,2>---  clean cvs dir
+	* <0,1,3>---  get ready for last day
+* <0,2>---  school
+	* <0,2,0>---  get books

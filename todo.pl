@@ -16,6 +16,7 @@ use strict;
   my $max_name=0;
   my @item_list;
   my $depth=0;
+  my $file_out;
   open(my $file_out, '>', 'todo_list.md');
 # main block
   {
@@ -106,6 +107,7 @@ print "push into existing locations\n";
           $item_list[$i_print]->printed(0);
         }
         $depth=0;
+        close $file_out;
       }
       elsif($line eq "q\n")
       {
@@ -133,37 +135,43 @@ close $cmd_mem;
     return 0;
   }
 
-sub print_tree
-{
-  my $location_in=$_[0];
 
-#if item has children do this
-  for(my $i_name=0; $i_name<=$max_name; $i_name++)
+
+  sub print_tree
   {
-    for(my $i_item=0; $i_item<=$#item_list; $i_item++)
+    my $location_in=$_[0];
+    if($depth==0)
     {
-      if(($item_list[$i_item]->location eq $location_in)and
-         ($item_list[$i_item]->name eq $i_name)and
-         ($item_list[$i_item]->printed==0)
-         )
+      `rm -f todo_list.md`;
+        open($file_out, '>', 'todo_list.md');
+    }
+#if item has children do this
+    for(my $i_name=0; $i_name<=$max_name; $i_name++)
+    {
+      for(my $i_item=0; $i_item<=$#item_list; $i_item++)
       {
-        my $print_string= "\* \<".$item_list[$i_item]->location.",".$item_list[$i_item]->name."\>---  ".$item_list[$i_item]->message."\n";
-        for(my $i_depth=0; $i_depth<$depth; $i_depth++)
+        if(($item_list[$i_item]->location eq $location_in)and
+            ($item_list[$i_item]->name eq $i_name)and
+            ($item_list[$i_item]->printed==0)
+          )
         {
-          $print_string = "\t".$print_string;
+          my $print_string= "\* \<".$item_list[$i_item]->location.",".$item_list[$i_item]->name."\>---  ".$item_list[$i_item]->message."\n";
+          for(my $i_depth=0; $i_depth<$depth; $i_depth++)
+          {
+            $print_string = "\t".$print_string;
+          }
+          print $file_out $print_string;
+          print $print_string;
+          $item_list[$i_item]->printed(1);
+          $depth++;
+          my $return_print=print_tree($item_list[$i_item]->location.",".$item_list[$i_item]->name);
         }
-        print $file_out $print_string;
-        print $print_string;
-        $item_list[$i_item]->printed(1);
-        $depth++;
-        my $return_print=print_tree($item_list[$i_item]->location.",".$item_list[$i_item]->name);
       }
     }
+    $depth--;
+    return 0;
   }
-  $depth--;
-  return 0;
-}
 
-close $file_out;
+      close $file_out;
 }
 #end of global

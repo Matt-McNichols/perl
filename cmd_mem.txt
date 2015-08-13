@@ -1,8 +1,10 @@
-add(0/1/test);
-add(0/3/test);
-add(0/2/test);
-add(0,2/15/test);
-add(0,1/10/test);
-add(0,1/8/test);
-add(0,1/1/this time should work);
-add(0,1,1/1/deeper one should work too);
+add(0/0/home);
+add(0/1/work);
+add(0/2/school);
+add(0,0/0/dentist appt);
+add(0,0/1/apply for cs major);
+add(0,1/0/MTS slides);
+add(0,1/1/MSI meeting with luis 9:30 AM);
+add(0,1/2/clean cvs dir);
+add(0,1/3/get ready for last day);
+add(0,2/0/get books);
