@@ -3,135 +3,167 @@ use Class::Struct;
 use warnings;
 use strict;
 
-struct( item => {
-    name => '$',
-    location => '@',
-    });
 
-my @outputs;
-my $line;
-my @todoList;
-
-while(<STDIN>)
 {
-  $line=$_;
-  if($line =~ m{addItem\((\S*)\s(\S*)\)})
+  struct( item => {
+      name => '$',
+      location => '$',
+      printed => '$',
+      message => '$'
+      });
+#global variables
+  my @existing_locations;
+  my $max_name=0;
+  my @item_list;
+  my $depth=0;
+  open(my $file_out, '>', 'todo_list.md');
+# main block
   {
-    my $check_valid=valid_locations($1);
-    if($check_valid==-2)
+  open( CMD_MEM, 'cmd_mem.txt')||die("cant open\n");
+    while(<CMD_MEM>)
     {
-      print "non-valid location entered\n";
-      exit;
-    }
-    my @location_array=split(',',$1);
-    my $new_item=item->new();
-    $new_item->name($2);
-    my $i=0;
-    while($location_array[$i])
-    {
-      $new_item->location($i,$location_array[$i]);
-      $i++;
-    }
-    push @todoList, $new_item;
-
-  }
-  elsif($line =~ m{print})
-  {
-    my $print_return=sort_locations(\@todoList)
-  }
-  else
-  {
-    print "that didnt work\n";
-  }
-#call sub that prints the name based on the location
-
-}
-
-
-sub sort_locations
-{
-  my $in=shift;
-  my @in_array=@{$in};
-  my $temp_item=item->new();
-
-#sort array by location array size
-  for(my $i=0; $i<$#in_array; $i++)
-  {
-    for(my $j=0; $j<($#in_array-$i); $j++)
-    {
-      for(my $k=0; $k<$#in_array; $k++)
+      print "inside cmd_mem loop\n";
+      my $line=$_;
+      if($line =~ m{add\((\S*)\/(\S*)\/(.*)\)})
       {
-        if(($#{$in_array[$j]->location}>=$k)&&($#{$in_array[$j+1]->location}>=$k))
+        my $temp_name = $2;
+        my $temp_location =$1;
+        my $temp_message=$3;
+
+# check that location is valid
+        my $return_valid=valid_location($temp_location);
+        if($return_valid==0)
         {
-        if(${$in_array[$j]->location}[$k] > ${$in_array[$j+1]->location}[$k])
+          print"oops not a valid location";
+          exit;
+        }
+        else
         {
-          $temp_item=$in_array[$j];
-          $in_array[$j]=$in_array[$j+1];
-          $in_array[$j+1]=$temp_item;
+          if($temp_name > $max_name)
+          {
+            $max_name=$temp_name;
+          }
+
+          my $temp_item=item->new();
+          $temp_item->name($temp_name);
+          $temp_item->location($temp_location);
+          $temp_item->message($temp_message);
+          $temp_item->printed(0);
+print "push into existing locations\n";
+          push @existing_locations, $temp_location.",".$temp_name;
+          push @item_list, $temp_item;
         }
+      }
+      elsif($line =~ m{print})
+      {
+        my $return_print=print_tree(0);
+      }
+    }
+    close CMD_MEM;
+  }
+  {
+
+    open(my $cmd_mem, '>>', 'cmd_mem.txt')||die("cant open 2\n");
+    while(<STDIN>)
+    {
+      my $line=$_;
+      if($line =~ m{add\((\S*)\/(\S*)\/(.*)\)})
+      {
+        my $temp_name = $2;
+        my $temp_location =$1;
+        my $temp_message=$3;
+# check that location is valid
+        my $return_valid=valid_location($temp_location);
+        if($return_valid==0)
+        {
+          print"oops not a valid location";
+          exit;
         }
+        else
+        {
+          chomp($line);
+          print $cmd_mem $line.";\n";
+          if($temp_name > $max_name)
+          {
+            $max_name=$temp_name;
+          }
+
+          my $temp_item=item->new();
+          $temp_item->name($temp_name);
+          $temp_item->location($temp_location);
+          $temp_item->message($temp_message);
+          $temp_item->printed(0);
+
+          push @existing_locations, $temp_location.",".$temp_name;
+          push @item_list, $temp_item;
+        }
+      }
+      elsif($line =~ m{print})
+      {
+        my $return_print=print_tree(0);
+        for(my $i_print=0; $i_print<=$#item_list; $i_print++)
+        {
+          $item_list[$i_print]->printed(0);
+        }
+        $depth=0;
+      }
+      elsif($line eq "q\n")
+      {
+        exit;
+      }
+    }
+close $cmd_mem;
+  }
+#end of main block
+
+  sub valid_location
+  {
+    my $temp_location=$_[0];
+    if($temp_location eq '0')
+    {
+      return 1;
+    }
+    for(my $i=0; $i<=$#existing_locations; $i++)
+    {
+      if(($temp_location =~ m{$existing_locations[$i]}))
+      {
+        return 1;
+      }
+    }
+    return 0;
+  }
+
+sub print_tree
+{
+  my $location_in=$_[0];
+
+#if item has children do this
+  for(my $i_name=0; $i_name<=$max_name; $i_name++)
+  {
+    for(my $i_item=0; $i_item<=$#item_list; $i_item++)
+    {
+      if(($item_list[$i_item]->location eq $location_in)and
+         ($item_list[$i_item]->name eq $i_name)and
+         ($item_list[$i_item]->printed==0)
+         )
+      {
+        my $print_string= "\* \<".$item_list[$i_item]->location.",".$item_list[$i_item]->name."\>---  ".$item_list[$i_item]->message."\n";
+        for(my $i_depth=0; $i_depth<$depth; $i_depth++)
+        {
+          $print_string = "\t".$print_string;
+        }
+        print $file_out $print_string;
+        print $print_string;
+        $item_list[$i_item]->printed(1);
+        $depth++;
+        my $return_print=print_tree($item_list[$i_item]->location.",".$item_list[$i_item]->name);
       }
     }
   }
-#sort by value within same size
-  my $return_print=print_list(\@in_array);
+  $depth--;
   return 0;
 }
 
-
-
-sub print_list
-{
-  my $in = shift;
-  my @in_array=@{$in};
-  for(my $k=0; $k<=$#in_array; $k++)
-  {
-    my $array_string=join(',',@{$in_array[$k]->location});
-    my $temp_out= $array_string."---".$in_array[$k]->name."\n";
-    for(my $i=0; $i<=$#{$in_array[$k]->location}; $i++)
-    {
-      $temp_out="\t".$temp_out;
-    }
-    push @outputs, $temp_out;
-  }
-  my $i=0;
-  for($i=0; $i<=$#outputs; $i++)
-  {
-    print $outputs[$i];
-  }
-  return 0;
+close $file_out;
 }
-
-
-
-
-
-
-
-sub valid_locations
-{
-  my $new=$_[0];
-my @existing_locations;
-#check for valid locations
-#if location is not valid throw it out
-  if($new !~ m{,})
-  {
-    push @existing_locations, $new;
-    return 0;
-  }
-  else
-  {
-    for(my $i=0; $i<=$#existing_locations; $i++)
-    {
-#why dont i ever go in here?????
-      print $new;
-      print $existing_locations[$i];
-        if($new =~m{ $existing_locations[$i]} )
-        {
-          push @existing_locations, $new;
-          return 0;
-        }
-    }
-  }
-  return -2;
-}
+#end of global
