@@ -23,7 +23,6 @@ use strict;
     open( CMD_MEM, 'cmd_mem.txt')||die("cant open\n");
     while(<CMD_MEM>)
     {
-      print "inside cmd_mem loop\n";
       my $line=$_;
       if($line =~ m{add\((\S*)\/(\S*)\/(.*)\)})
       {
@@ -50,7 +49,6 @@ use strict;
           $temp_item->location($temp_location);
           $temp_item->message($temp_message);
           $temp_item->printed(0);
-          print "push into existing locations\n";
           push @existing_locations, $temp_location.",".$temp_name;
           push @item_list, $temp_item;
         }
@@ -69,7 +67,6 @@ use strict;
           if(($item_list[$i_del]->location eq $del_location) and
               ($item_list[$i_del]->name eq $del_name))
           {
-            print"found item\n";
             splice @item_list, $i_del, 1;
 
           }
