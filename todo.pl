@@ -23,21 +23,23 @@ use strict;
     while(<CMD_MEM>)
     {
       my $line=$_;
+
+
       if($line =~ m{add\((\S*)\/(\S*)\/(.*)\)})
       {
         my $temp_name = $2;
         my $temp_location =$1;
         my $temp_message=$3;
-
 # check that location is valid
-        my $return_valid=valid_location($temp_location);
-        if($return_valid==0)
-        {
-          print"oops not a valid location";
-          exit;
-        }
-        else
-        {
+#     my $return_valid=valid_location($temp_location,$temp_name);
+#       if($return_valid==0)
+#       {
+#         print"oops not a valid location";
+#         exit;
+#       }
+#       elsif($return_valid==1)
+#       {
+          chomp($line);
           if($temp_name > $max_name)
           {
             $max_name=$temp_name;
@@ -48,13 +50,32 @@ use strict;
           $temp_item->location($temp_location);
           $temp_item->message($temp_message);
           $temp_item->printed(0);
+
           push @existing_locations, $temp_location.",".$temp_name;
           push @item_list, $temp_item;
-        }
+#       }
+#       elsif($return_valid==2)
+#       {
+#         print "edited existing item\n";
+#         my $check=0;
+#         for(my $i_edit=0; $i_edit<=$#item_list; $i_edit++)
+#         {
+#           if(($temp_location eq $item_list[$i_edit]->location)and($temp_name eq $item_list[$i_edit]->name))
+#           {
+#             $item_list[$i_edit]->message($temp_message);
+#             $check=1;
+#           }
+#         }
+#         if($check eq 0)
+#         {
+#           print "Error item_list and existing_locations do not match\n";
+#           exit;
+#         }
+#       }
       }
       elsif($line =~ m{print})
       {
-        print"ERROR";
+        print"ERROR\n";
         exit
       }
       elsif($line =~ m{del\((\S*)\/(\S*)\)})
@@ -77,8 +98,20 @@ use strict;
   {
 
     open(my $cmd_mem, '>>', 'cmd_mem.txt')||die("cant open 2\n");
+#If there are items in the list print them at the start of the program
+      if($#item_list>=0)
+      {
+        my $return_print=print_tree(0);
+        for(my $i_print=0; $i_print<=$#item_list; $i_print++)
+        {
+          $item_list[$i_print]->printed(0);
+        }
+        $depth=0;
+        close $file_out;
+      }
     while(<STDIN>)
     {
+      print"======================================\n";
       my $line=$_;
       if($line =~ m{add\((\S*)\/(\S*)\/(.*)\)})
       {
@@ -86,13 +119,13 @@ use strict;
         my $temp_location =$1;
         my $temp_message=$3;
 # check that location is valid
-        my $return_valid=valid_location($temp_location);
+        my $return_valid=valid_location($temp_location,$temp_name);
         if($return_valid==0)
         {
-          print"oops not a valid location";
+          print"oops not a valid location\n";
           exit;
         }
-        else
+        elsif($return_valid==1)
         {
           chomp($line);
           print $cmd_mem $line.";\n";
@@ -109,6 +142,28 @@ use strict;
 
           push @existing_locations, $temp_location.",".$temp_name;
           push @item_list, $temp_item;
+        }
+        elsif($return_valid==2)
+        {
+          print "edited existing item\n";
+          my $check=0;
+          for(my $i_edit=0; $i_edit<=$#item_list; $i_edit++)
+          {
+            if(($temp_location eq $item_list[$i_edit]->location)and($temp_name eq $item_list[$i_edit]->name))
+            {
+              $item_list[$i_edit]->message($temp_message);
+              my $del_cmd="del($temp_location\/$temp_name\);\n";
+              my $add_cmd="add($temp_location\/$temp_name\/$temp_message\);\n";
+              print $cmd_mem $del_cmd;
+              print $cmd_mem $add_cmd;
+              $check=1;
+            }
+          }
+          if($check eq 0)
+          {
+            print "Error item_list and existing_locations do not match\n";
+            exit;
+          }
         }
       }
       elsif($line =~ m{del\((\S*)\/(\S*)\)})
@@ -132,7 +187,7 @@ use strict;
       {
         exit;
       }
-      else
+      if($#item_list>=0)
       {
         my $return_print=print_tree(0);
         for(my $i_print=0; $i_print<=$#item_list; $i_print++)
@@ -143,32 +198,40 @@ use strict;
         close $file_out;
       }
     }
-close $cmd_mem;
+    close $cmd_mem;
   }
 #end of main block
 
   sub valid_location
   {
     my $temp_location=$_[0];
+    my $temp_name=$_[1];
+    my $return_val=0;
+    for(my $i=0; $i<=$#existing_locations; $i++)
+    {
+      if(($temp_location.",".$temp_name eq $existing_locations[$i]))
+      {
+        print "location already exists\n";
+        $return_val=2;
+        return $return_val;
+      }
+      elsif($temp_location eq $existing_locations[$i])
+      {
+        $return_val= 1;
+      }
+    }
     if($temp_location eq '0')
     {
       return 1;
     }
-    for(my $i=0; $i<=$#existing_locations; $i++)
-    {
-      if(($temp_location =~ m{$existing_locations[$i]}))
-      {
-        return 1;
-      }
-    }
-    return 0;
+    return $return_val;
   }
 
 
 
   sub print_tree
   {
-    my $location_in=$_[0];
+  my $location_in=$_[0];
     if($depth==0)
     {
       `rm -f todo_list.md`;
