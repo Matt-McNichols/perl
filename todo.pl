@@ -20,7 +20,7 @@ use strict;
   open(my $file_out, '>', 'todo_list.md');
 # main block
   {
-  open( CMD_MEM, 'cmd_mem.txt')||die("cant open\n");
+    open( CMD_MEM, 'cmd_mem.txt')||die("cant open\n");
     while(<CMD_MEM>)
     {
       print "inside cmd_mem loop\n";
@@ -50,14 +50,30 @@ use strict;
           $temp_item->location($temp_location);
           $temp_item->message($temp_message);
           $temp_item->printed(0);
-print "push into existing locations\n";
+          print "push into existing locations\n";
           push @existing_locations, $temp_location.",".$temp_name;
           push @item_list, $temp_item;
         }
       }
       elsif($line =~ m{print})
       {
-        my $return_print=print_tree(0);
+        print"ERROR";
+        exit
+      }
+      elsif($line =~ m{del\((\S*)\/(\S*)\)})
+      {
+        my $del_location=$1;
+        my $del_name=$2;
+        for(my $i_del=0; $i_del<=$#item_list; $i_del++)
+        {
+          if(($item_list[$i_del]->location eq $del_location) and
+              ($item_list[$i_del]->name eq $del_name))
+          {
+            print"found item\n";
+            splice @item_list, $i_del, 1;
+
+          }
+        }
       }
     }
     close CMD_MEM;
@@ -108,6 +124,23 @@ print "push into existing locations\n";
         }
         $depth=0;
         close $file_out;
+      }
+      elsif($line =~ m{del\((\S*)\/(\S*)\)})
+      {
+        my $del_location=$1;
+        my $del_name=$2;
+        for(my $i_del=0; $i_del<=$#item_list; $i_del++)
+        {
+          if(($item_list[$i_del]->location eq $del_location) and
+              ($item_list[$i_del]->name eq $del_name))
+          {
+          chomp($line);
+          print $cmd_mem $line.";\n";
+            print"found item\n";
+            splice @item_list, $i_del, 1;
+
+          }
+        }
       }
       elsif($line eq "q\n")
       {
