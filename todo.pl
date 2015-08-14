@@ -185,20 +185,22 @@ close $cmd_mem;
           )
         {
           my $print_string= "\* \<".$item_list[$i_item]->location.",".$item_list[$i_item]->name."\>---  ".$item_list[$i_item]->message."\n";
+          my $print_md_string= "\*   ".$item_list[$i_item]->message."\n";
           for(my $i_depth=0; $i_depth<$depth; $i_depth++)
           {
             $print_string = "\t".$print_string;
+            $print_md_string = "\t".$print_md_string;
           }
           if($depth==0)
           {
             print $file_out "\n---\n";
-          print $file_out $print_string;
+          print $file_out $print_md_string;
           print $print_string;
           $item_list[$i_item]->printed(1);
           }
           else
           {
-          print $file_out $print_string;
+          print $file_out $print_md_string;
           print $print_string;
           $item_list[$i_item]->printed(1);
           }
