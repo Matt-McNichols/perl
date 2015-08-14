@@ -111,16 +111,6 @@ use strict;
           push @item_list, $temp_item;
         }
       }
-      elsif($line =~ m{print})
-      {
-        my $return_print=print_tree(0);
-        for(my $i_print=0; $i_print<=$#item_list; $i_print++)
-        {
-          $item_list[$i_print]->printed(0);
-        }
-        $depth=0;
-        close $file_out;
-      }
       elsif($line =~ m{del\((\S*)\/(\S*)\)})
       {
         my $del_location=$1;
@@ -141,6 +131,16 @@ use strict;
       elsif($line eq "q\n")
       {
         exit;
+      }
+      else
+      {
+        my $return_print=print_tree(0);
+        for(my $i_print=0; $i_print<=$#item_list; $i_print++)
+        {
+          $item_list[$i_print]->printed(0);
+        }
+        $depth=0;
+        close $file_out;
       }
     }
 close $cmd_mem;
