@@ -13,3 +13,5 @@ add(0,1/2/test);
 add(0,1,1/0/T minus 15 min);
 add(0,1,2/0/test deeper);
 add(0/2/school);
+add(0,2/1/hello);
+del(0/1);
