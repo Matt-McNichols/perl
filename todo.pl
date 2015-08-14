@@ -195,8 +195,8 @@ close $cmd_mem;
           }
           if($depth==0)
           {
-          print $file_out "\n".$print_string;
-          print "\n".$print_string;
+          print $file_out $print_string;
+          print $print_string;
           $item_list[$i_item]->printed(1);
           }
           else
