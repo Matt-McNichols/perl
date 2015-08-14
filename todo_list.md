@@ -1,18 +1,18 @@
 
 ---
-* <0,0>---  home
-	* <0,0,0>---  dentist appt
-	* <0,0,1>---  hello people
+*  home
+	*  dentist appt
+	*  hello people
 
 ---
-* <0,1>---  work
-	* <0,1,0>---  MTS slides
-		* <0,1,0,0>---  update VIP block design
-	* <0,1,1>---  MSI meeting with luis 9:30 AM
-	* <0,1,2>---  clean cvs dir
-	* <0,1,3>---  upload scripts
+*  work
+	*  MTS slides
+		*  update VIP block design
+	*  MSI meeting with luis 9:30 AM
+	*  clean cvs dir
+	*  upload scripts
 
 ---
-* <0,2>---  school
-	* <0,2,0>---  get books
-	* <0,2,1>---  apply for cs major
+*  school
+	*  get books
+	*  apply for cs major
