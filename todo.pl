@@ -16,7 +16,6 @@ use strict;
   my $max_name=0;
   my @item_list;
   my $depth=0;
-  my $file_out;
   open(my $file_out, '>', 'todo_list.md');
 # main block
   {

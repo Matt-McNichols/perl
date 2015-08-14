@@ -1,0 +1,3 @@
+git add *;
+git commit -m "updated cmd_mem.md";
+git push origin master;
