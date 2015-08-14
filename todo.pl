@@ -193,9 +193,18 @@ close $cmd_mem;
           {
             $print_string = "\t".$print_string;
           }
+          if($depth==0)
+          {
+          print $file_out "\n".$print_string;
+          print "\n".$print_string;
+          $item_list[$i_item]->printed(1);
+          }
+          else
+          {
           print $file_out $print_string;
           print $print_string;
           $item_list[$i_item]->printed(1);
+          }
           $depth++;
           my $return_print=print_tree($item_list[$i_item]->location.",".$item_list[$i_item]->name);
         }
