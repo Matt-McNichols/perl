@@ -1,8 +1,12 @@
 
 ---
-*   home
-	*   make dentist appt
+*   mow lawns
 
 ---
-*   school
-	*   hello
+*   apply for cs major
+
+---
+*   get rug
+
+---
+*   fix this program

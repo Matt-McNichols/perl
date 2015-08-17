@@ -9,6 +9,7 @@ use strict;
       name => '$',
       location => '$',
       printed => '$',
+      print_valid => '$',
       message => '$'
       });
 #global variables
@@ -139,7 +140,8 @@ use strict;
           $temp_item->location($temp_location);
           $temp_item->message($temp_message);
           $temp_item->printed(0);
-
+          $temp_item->print_valid(1);
+#add print valid bit set to true
           push @existing_locations, $temp_location.",".$temp_name;
           push @item_list, $temp_item;
         }
@@ -178,7 +180,8 @@ use strict;
           chomp($line);
           print $cmd_mem $line.";\n";
             print"found item\n";
-            splice @item_list, $i_del, 1;
+#instead of splice just set a print valid bit to false
+            $item_list[$i_del]->print_valid(0);
 
           }
         }
@@ -244,7 +247,8 @@ use strict;
       {
         if(($item_list[$i_item]->location eq $location_in)and
             ($item_list[$i_item]->name eq $i_name)and
-            ($item_list[$i_item]->printed==0)
+            ($item_list[$i_item]->printed==0)and
+            ($item_list[$i_item]->print_valid==1)
           )
         {
           my $print_string= "\* \<".$item_list[$i_item]->location.",".$item_list[$i_item]->name."\>---  ".$item_list[$i_item]->message."\n";
