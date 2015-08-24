@@ -1,12 +1,5 @@
 
 ---
-*   mow lawns
-
----
-*   apply for cs major
-
----
-*   get rug
-
----
-*   fix this program
+*   DSP
+	*   3 midterms
+	*   website: ecee.colorado.edu/~ecen4632
