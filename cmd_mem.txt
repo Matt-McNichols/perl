@@ -1,3 +1,5 @@
 add(0/0/DSP);
 add(0,0/1/website: ecee.colorado.edu/~ecen4632);
 add(0,0/0/3 midterms);
+add(0/1/DDL);
+add(0,1/0/need to buy blue tooth and motor);
