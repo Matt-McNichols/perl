@@ -7,3 +7,4 @@
 ---
 *   DDL
 	*   need to buy blue tooth and motor
+![Alt text](wolf-wind.jpg)
