@@ -7,3 +7,9 @@
     * Final Project: Locally inspired...
     * blog post due 8 am thursday
     * blog instructions on D2l
+    * write about yourself turn it in Thrusday/Tuesday
+    single spaced printed and 1/2 page
+      * what are your intentions 
+      * where are you from 
+      * any constraints for class
+      * whats going on in your life
