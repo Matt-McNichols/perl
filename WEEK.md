@@ -19,6 +19,11 @@
   * 4:00 -- AI
     * get logged into moodle
   * email professors about ET
+  * email hiren about hours
+  * get bread
+  * install DDL IDE
+  * call Madden
+  *
 
 ---
 * Thursday
