@@ -17,6 +17,8 @@
   * 10:00 -- COM_TH
   * 11:00 -- DSP
   * 4:00 -- AI
+    * get logged into moodle
+  * email professors about ET
 
 ---
 * Thursday
