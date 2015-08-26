@@ -2,7 +2,7 @@
 ---
 *   DSP
 	*   3 midterms
-	*   website: ecee.colorado.edu/~ecen4632
+	*   website: https://ecee.colorado.edu/~ecen4632
   *   Text Book:
     *   dscrete-Time Signal Processing,  Alan V. Oppenheim
   *   8_24_15:
