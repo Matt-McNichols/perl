@@ -15,7 +15,10 @@
       * where are you from 
       * any constraints for class
       * whats going on in your life
-      ![PSA pic] (http://digitalsynopsis.com/wp-content/uploads/2014/10/public-service-announcements-social-issue-ads-27.jpg)
+      * 
+ public service announcement:
+ * 2.5-2.5 pages 
+ * ![PSA pic] (http://digitalsynopsis.com/wp-content/uploads/2014/10/public-service-announcements-social-issue-ads-27.jpg)
 
 ---
 ## Halloran Reading
