@@ -14,14 +14,19 @@
 ---
 * Tuesday
   * 9:30 -- WSS
-    *  2-3 pages public service announcement
+    * 2-3 pages public service announcement
+      * print out 20 times I think
+      * address your belief of the effectiveness of PSA
+    * print and turn in "about me" doc
   * 1:00 -- DDL
+    * pre-lab due
+    * lab 1 due
 
 ---
 * Wednesday
   * 11:00 -- DSP
+  * 4:00 -- work
   * 4:00 -- AI
-    * get logged into moodle
 
 ---
 * Thursday
@@ -31,7 +36,13 @@
 
 ---
 * Friday
-  * 10:00 -- COM_TH
   * 11:00 -- DSP
-    * PB set 1 due
+    * PB set 2 due
+  * 4:00 MOAB
   * 4:00 -- AI
+    * Assignment 1 due
+
+---
+* schedule physical
+* mow lawns
+* email meyers about extended time
