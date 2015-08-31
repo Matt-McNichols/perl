@@ -18,8 +18,22 @@
  
 ---
 ## public service announcement
- * 2.5-2.5 pages 
- * ![PSA pic] (http://digitalsynopsis.com/wp-content/uploads/2014/10/public-service-announcements-social-issue-ads-27.jpg)
+  * 2.5-2.5 pages 
+  * ![PSA pic] (http://digitalsynopsis.com/wp-content/uploads/2014/10/public-service-announcements-social-issue-ads-27.jpg)
+
+  * Topic: Do not waste paper
+
+  * Thesis: The publisher uses color and juxtaposition to convey the damaging effect of using paper towel when washing your hands.   
+
+  * color:
+    * the color represents the state of the world’s forest and wildlife.  
+    * green for healthy
+    * black for dead
+    * also there is full empty connotation
+
+  * draws on real experiences:
+    * tries to make a connection to the reader’s life
+      * how terrible it is when the paper towel dispenser is empty 
 
 ---
 ## Halloran Reading
