@@ -1,7 +1,11 @@
 
+===
+DDL
+===
+
 ---
-*  DDL
-  *  8/24/15
+Week 1:
+* lecture 8/24/15:
   *  Website: http://ecee.colorado.edu/~ecen3000/
   *  ![Lecture 1](https://github.com/Matt-McNichols/perl/blob/master/DDL/class_8_24_15.jpg)
   *  Lab 1 due Tuesday 9/1/15
@@ -19,7 +23,7 @@ Week 2:
     * lspcxpresso
   * cortex M0:
     * Firmware: software that controls the hardware
-    * very specific
+      * very specific
     * registers:
       * 16 - instructions (only uses low registers)
       * 32 - instructions (uses all registers)
@@ -36,4 +40,23 @@ Week 2:
         * for more than 4 arguments use a pointer
       * R4-R11: local variables
       * R12:  Intra-Procedure scratch reg (not important)
-
+      * when variable is pushed on the stack SP is incremented by 1
+    * Lab 2: write fib. seq. (write using recursion in assembly)
+      * why?  lots of program calls. you will need to handle stack properly
+    * Lab 3: write using interrupts
+    * Interrupts:
+      * signal that indicates to the processor there is an event that needs immediate attention.
+      * systick: 15  system timer
+      * IRQ0-IRQ31: 16-47
+      * Interrupt generator:
+        * read out the frequency of ADC
+        * ADC detects the rising edge
+          * interrupt on rising edge
+          * run frequency application
+            * change PC to ISR
+            * memory:
+              * interrupt #0 at address 0x40
+              * value at address 0x40 is a pointer to ISR#0
+              * PC=(#intr*4 + 0x40)
+            * check the system clock every time interrupt occurs
+            * freq= 1/(Cnew-Cold) 
