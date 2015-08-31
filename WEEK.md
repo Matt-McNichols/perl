@@ -2,10 +2,12 @@
 ---
 * Monday
   * 9:00 -- DDL
-    *  office hours 5:00-6:00
-    *  lab due tuesday
+    * office hours 5:00-6:00
+    * lab due tuesday
+    * prelab due tuesday
   * 11:00 -- DSP
     *  email meyers about ET
+  * 1:00 Work
   * 4:00 -- AI
     *  hw due friday
 

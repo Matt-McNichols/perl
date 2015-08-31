@@ -39,6 +39,22 @@
 
   * Topic: Do not waste paper
 
+  * Intro: 
+    * In the civil war, the north sold war bonds via ads in the newspaper. This was a propaganda act to raise support for the war. The ads were paid for by the U.S. government.
+    * After the turn of the century, the firs non-government PSAs were produced.
+      * ads were run free of charge by the newspaper to raise awareness of horrors of child labor.
+    * PSAs had proven very effective and were now used for an array of topics such as womans rights, army recruitment, health risks, and thinking green
+    * One key component to the PSA, is the advertisement is funded.
+    * A lot of PSAs are pictures:
+      * There is a demand for concise and rhetorically effective advertising in order to create a convincing arguement on a budget.
+      * The audience for PSAs is very large,
+        * not everyone is literate. Many people speak different languages. People are many different ages.
+        * pictures are a very universal form of communication
+
+  * Audience is all different ages, social status and mental ability.
+    * we can see the audience is first world because the example of paper towels in a bathroom would not be effective for people who are not used to using an american bathroom,
+      more specifically paper towel dispensers
+
   * Thesis: The publisher uses color and juxtaposition to convey the damaging effect of using paper towel when washing your hands.   
 
   * color:
