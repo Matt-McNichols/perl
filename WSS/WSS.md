@@ -34,7 +34,7 @@
 
 ---
 ## public service announcement
-  * 2.5-2.5 pages 
+  * 2.5-3.5 pages 
   * ![PSA pic] (http://digitalsynopsis.com/wp-content/uploads/2014/10/public-service-announcements-social-issue-ads-27.jpg)
 
   * Topic: Do not waste paper
