@@ -31,6 +31,7 @@
       * First this example is not entirely relevent to the arguement Halloran is making. This man was not analizing the validity of scientific articals
 
     *location: bottom of page 70
+
 ---
 ## public service announcement
   * 2.5-2.5 pages 
