@@ -17,6 +17,7 @@
     * 2-3 pages public service announcement
       * print out 20 times I think
       * address your belief of the effectiveness of PSA
+    * second blog post
     * print and turn in "about me" doc
   * 1:00 -- DDL
     * pre-lab due
