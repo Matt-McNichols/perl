@@ -2,13 +2,17 @@
 ---
 * Monday
   * 9:00 -- DDL
+    *  office hours 5:00-6:00
+    *  lab due tuesday
   * 11:00 -- DSP
-  * email meyers about ET
+    *  email meyers about ET
   * 4:00 -- AI
+    *  hw due friday
 
 ---
 * Tuesday
   * 9:30 -- WSS
+    *  2-3 pages public service announcement
   * 1:00 -- DDL
 
 ---

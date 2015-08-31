@@ -5,3 +5,35 @@
   *  Website: http://ecee.colorado.edu/~ecen3000/
   *  ![Lecture 1](https://github.com/Matt-McNichols/perl/blob/master/DDL/class_8_24_15.jpg)
   *  Lab 1 due Tuesday 9/1/15
+
+---
+Week 2:
+
+* Lecture 8/31/15:
+  * Lab 1 due tomorrow
+  * include header files
+  * two libs
+    * make sure the paths are known
+      * gcc (path, name) FIXME
+    * cmsis(ARM)
+    * lspcxpresso
+  * cortex M0:
+    * Firmware: software that controls the hardware
+    * very specific
+    * registers:
+      * 16 - instructions (only uses low registers)
+      * 32 - instructions (uses all registers)
+      * registers run at the same speed as microprocessor
+      * R0-R7  lower regs
+      * R8-R16 higher regs
+      * special regs: SP,LR,PC
+      * flag regs:  NZVC
+    * Calling conventions:
+      * R15: PC
+      * R14: LR
+      * R13: SP
+      * R0-R3: subroutine arguements
+        * for more than 4 arguments use a pointer
+      * R4-R11: local variables
+      * R12:  Intra-Procedure scratch reg (not important)
+
