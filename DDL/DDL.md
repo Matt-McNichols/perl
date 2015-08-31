@@ -15,6 +15,7 @@ Week 2:
 
 * Lecture 8/31/15:
   * Lab 1 due tomorrow
+  * prelab 2 due tomorrow
   * include header files
   * two libs
     * make sure the paths are known
