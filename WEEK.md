@@ -44,6 +44,14 @@
     * Assignment 1 due
 
 ---
+TODO:
+
+* print psa paper x20
+* print about me paper
+* second blog post
+* finish lab 1
+  * lab 1 quiz on tuesday
+* prelab 2
 * schedule physical
 * mow lawns
 * email meyers about extended time
