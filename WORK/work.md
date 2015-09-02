@@ -38,6 +38,7 @@
                     |  10b  |  SGL used    |
                     |  01b  |  Reserved    |
 
+
                   * Bit (13:10): Reserved
                   * Bit (09:08): Fused Operation
                   * Bit (07:00): opcode
@@ -128,7 +129,7 @@
                    and PRP Entry 1 (PRP1) is the address of a contiguous physical buffer. If cleared to '0', then the
                    Completion Queue is not physically contiguous and PRP Entry 1 (PRP1) is a PRP List pointer. If the
                    queue is located in the Controller Memory Buffer and PC is cleared to '0'
-                   * the controller shall fail the command with Invalid Use of Controller Memory Buffer status
+      * the controller shall fail the command with Invalid Use of Controller Memory Buffer status
 
 
 
