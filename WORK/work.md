@@ -1,3 +1,52 @@
+## Admin Command Formant
+
+---
+* Byte (61:60) -- CDW15: C.S.
+* Byte (59:56) -- CDW14: C.S.
+* Byte (55:52) -- CDW13: C.S.
+* Byte (51:48) -- CDW12: C.S.
+* Byte (47:44) -- CDW11: C.S.
+* Byte (43:40) -- CDW10: C.S.
+* Byte (39:32) -- PRP Entry 2:
+  * is reserved if the data transfer does not cross a memory page boundary.
+  * specifies the Page Base Address of the second memory page if the data transfer crosses
+      exactly one memory page boundary. E.g.,:
+      * the command data transfer length is equal in size to one memory page and the
+        offset portion of the PBAO field of PRP1 is non-zero or
+      * the Offset portion of the PBAO field of PRP1 is equal to zero and the command
+        data transfer length is greater than one memory page and less than or equal to two
+        memory pages in size.
+  * is a PRP List pointer if the data transfer crosses more than one memory page boundary. E.g.,:
+    * the command data transfer length is greater than or equal to two memory pages in size
+      but the offset portion of the PBAO field of PRP1 is non-zero or
+    * the command data transfer length is equal in size to more than two memory pages and the Offset
+      portion of the PBAO field of PRP1 is equal to zero
+* Byte (31:24) -- PRP Entry 1:
+  * This field contains the first PRP entry for the command or a PRP List pointer depending on the command.
+* Byte (23:16) -- Metadata pointer:
+* Byte (15:08) -- Reserved
+* Byte (07:04) -- Namespace ID:
+* Byte (03:00) -- CDW0:
+                  * Bit (31:16): Command ID <CID> -- This field specifies a unique ID for the command when
+                                 combined with the SQID
+                  * Bit (15:14): PRP or SGL for data transfer <PSDT> --
+
+                    | Value |  Definition  |
+                    |-------|-------------:|
+                    |  00b  |  PRP used    |
+                    |  01b  |  SGL used    |
+                    |  10b  |  SGL used    |
+                    |  01b  |  Reserved    |
+
+                  * Bit (13:10): Reserved
+                  * Bit (09:08): Fused Operation
+                  * Bit (07:00): opcode
+
+
+
+
+
+
 ## Create I/O completion Q
 
 ---
@@ -69,7 +118,7 @@
 
 
                    | Value |  Definition  |
-                   |-------|:------------:|
+                   |-------|-------------:|
                    |  00b  |  Urgent      |
                    |  01b  |  High        |
                    |  10b  |  Medium      |
@@ -82,3 +131,20 @@
                    queue is located in the Controller Memory Buffer and PC is cleared to '0'
 
                    * the controller shall fail the command with Invalid Use of Controller Memory Buffer status
+
+
+
+
+/* nvme nvm opcodes */
+enum nvme_nvm_opcode {
+          NVME_OPC_FLUSH                   = 0x00,
+          NVME_OPC_WRITE                   = 0x01,
+          NVME_OPC_READ                    = 0x02,
+          /* 0x03 - reserved */
+          NVME_OPC_WRITE_UNCORRECTABLE     = 0x04,
+          NVME_OPC_COMPARE                 = 0x05,
+          /* 0x06-0x07 - reserved */
+          NVME_OPC_DATASET_MANAGEMENT      = 0x09,
+};
+
+pg 70
