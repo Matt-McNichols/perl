@@ -133,6 +133,7 @@
                    * the controller shall fail the command with Invalid Use of Controller Memory Buffer status
 
 
+                   *![create I/O SQ] (http://www.flashmemorysummit.com/English/Collaterals/Proceedings/2013/20130815_I31_Livny.pdf)
 
 
 /* nvme nvm opcodes */
@@ -147,4 +148,3 @@ enum nvme_nvm_opcode {
           NVME_OPC_DATASET_MANAGEMENT      = 0x09,
 };
 
-pg 70
