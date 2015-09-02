@@ -116,7 +116,6 @@
                    priority class is the arbitration mechanism selected, the field is ignored if weighted round robin
                    with urgent priority class is not used. Refer to section 4.11
 
-
                    | Value |  Definition  |
                    |-------|-------------:|
                    |  00b  |  Urgent      |
@@ -129,7 +128,6 @@
                    and PRP Entry 1 (PRP1) is the address of a contiguous physical buffer. If cleared to '0', then the
                    Completion Queue is not physically contiguous and PRP Entry 1 (PRP1) is a PRP List pointer. If the
                    queue is located in the Controller Memory Buffer and PC is cleared to '0'
-
                    * the controller shall fail the command with Invalid Use of Controller Memory Buffer status
 
 
