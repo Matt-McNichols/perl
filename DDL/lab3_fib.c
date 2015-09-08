@@ -45,7 +45,32 @@ int fib(int n)  // store n on the stack--> r0 is free
 
 int main()
 {
-  int  one=fib(13);
-  printf("result: %d\n",one);
+  long int  decimalNumber=fib(13);
+  printf("result: %ld\n",decimalNumber);
+  long int remainder,quotient;
+  int i=1,j,temp;
+  char hexadecimalNumber[100];
+
+  quotient = decimalNumber;
+
+  while(quotient!=0){
+    temp = quotient % 16;
+
+    //To convert integer into character
+    if( temp < 10)
+      temp =temp + 48;
+    else
+      temp = temp + 55;
+
+    hexadecimalNumber[i++]= temp;
+    quotient = quotient / 16;
+  }
+
+  printf("Equivalent hexadecimal value of decimal number %ld: ",decimalNumber);
+  for(j = i -1 ;j> 0;j--)
+  {
+    printf("%c",hexadecimalNumber[j]);
+  }
+  printf("\n");
   return 0;
 }
