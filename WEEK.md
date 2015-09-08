@@ -32,7 +32,6 @@
 ---
 * Thursday
   * 9:30 -- WSS
-    * read artical and write blog post
   * 1:00 -- DDL
 
 ---
@@ -46,12 +45,11 @@
 ---
 TODO:
 
-* print psa paper x20
-* print about me paper
-* second blog post
-* finish lab 1
-  * lab 1 quiz on tuesday
-* prelab 2
+* AI assignment due
+* AI office hours are at some point
+* DSP problem set 2 due friday
+* read psa paper x20
+* DDL lab 2
 * schedule physical
 * mow lawns
 * email meyers about extended time
