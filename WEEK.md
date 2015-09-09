@@ -46,3 +46,4 @@ TODO:
 * DDL lab 2 due next tuesday
 * schedule physical
 * email meyers about extended time
+* find bluetooth speaker
