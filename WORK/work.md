@@ -30,13 +30,27 @@
                   * Bit (31:16): Command ID <CID> -- This field specifies a unique ID for the command when
                                  combined with the SQID
                   * Bit (15:14): PRP or SGL for data transfer <PSDT> --
-
-                    | Value |  Definition  |
-                    |-------|-------------:|
-                    |  00b  |  PRP used    |
-                    |  01b  |  SGL used    |
-                    |  10b  |  SGL used    |
-                    |  01b  |  Reserved    |
+<TABLE>
+       <TR>
+           <TD> Value <\TD>
+           <TD> Definition <\TD>
+       <\TR>
+       <TR>
+           <TD> 00b <\TD>
+           <TD> PRP used <\TD>
+       <\TR>
+       <TR>
+           <TD> 01b <\TD>
+           <TD> SGL used <\TD>
+       <\TR>
+       <TR>
+           <TD> 10b <\TD>
+           <TD> SGL used <\TD>
+       <\TR>
+       <TR>
+           <TD> 11b <\TD>
+           <TD> Reserved <\TD>
+       <\TR>
 
 
                   * Bit (13:10): Reserved
