@@ -1,3 +1,0 @@
-rm hierarchy_report.txt;
-rm verilog_report.txt;
-
