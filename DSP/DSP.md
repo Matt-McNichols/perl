@@ -1,7 +1,9 @@
 
 ---
 *   DSP
+  *   office hours: WED 6-7 PM
 	*   3 midterms
+  *   midterm 1 -- Friday September 8
 	*   website: https://ecee.colorado.edu/~ecen4632
   *   Text Book:
     *   dscrete-Time Signal Processing,  Alan V. Oppenheim
