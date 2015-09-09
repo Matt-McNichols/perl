@@ -6,7 +6,6 @@
   * 11:00 -- DSP
     *  email meyers about ET
   * 4:00 -- AI
-    *  hw due friday
 
 ---
 * Tuesday
@@ -26,6 +25,7 @@
 ---
 * Thursday
   * 9:30 -- WSS
+    * Rest of the comments are due
   * 1:00 -- DDL
 
 ---

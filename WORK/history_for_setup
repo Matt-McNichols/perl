@@ -1,0 +1,4 @@
+cvs checkout NVMe_host_BFM
+source howto_10.3b ~/Projects/ ~/evc_lib SATA_CORE
+../compile_all | grep Error | grep -v "Errors: 0"
+../runsim
