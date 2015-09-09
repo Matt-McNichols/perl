@@ -32,26 +32,26 @@
                   * Bit (15:14): PRP or SGL for data transfer <PSDT> --
 <TABLE>
        <TR>
-           <TD> Value <\TD>
-           <TD> Definition <\TD>
-       <\TR>
+           <TD> Value </TD>
+           <TD> Definition </TD>
+       </TR>
        <TR>
-           <TD> 00b <\TD>
-           <TD> PRP used <\TD>
-       <\TR>
+           <TD> 00b </TD>
+           <TD> PRP used </TD>
+       </TR>
        <TR>
-           <TD> 01b <\TD>
-           <TD> SGL used <\TD>
-       <\TR>
+           <TD> 01b </TD>
+           <TD> SGL used </TD>
+       </TR>
        <TR>
-           <TD> 10b <\TD>
-           <TD> SGL used <\TD>
-       <\TR>
+           <TD> 10b </TD>
+           <TD> SGL used </TD>
+       </TR>
        <TR>
-           <TD> 11b <\TD>
-           <TD> Reserved <\TD>
-       <\TR>
-<\TABLE>
+           <TD> 11b </TD>
+           <TD> Reserved </TD>
+       </TR>
+</TABLE>
 
                   * Bit (13:10): Reserved
                   * Bit (09:08): Fused Operation
