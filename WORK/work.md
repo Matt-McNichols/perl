@@ -53,6 +53,7 @@
        </TR>
 </TABLE>
 
+
                   * Bit (13:10): Reserved
                   * Bit (09:08): Fused Operation
                   * Bit (07:00): opcode
