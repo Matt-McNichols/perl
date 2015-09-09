@@ -30,6 +30,9 @@
                   * Bit (31:16): Command ID <CID> -- This field specifies a unique ID for the command when
                                  combined with the SQID
                   * Bit (15:14): PRP or SGL for data transfer <PSDT> --
+
+
+
 <TABLE>
        <TR>
            <TD> Value </TD>
