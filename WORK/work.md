@@ -51,7 +51,7 @@
            <TD> 11b <\TD>
            <TD> Reserved <\TD>
        <\TR>
-
+<\TABLE>
 
                   * Bit (13:10): Reserved
                   * Bit (09:08): Fused Operation
