@@ -1,15 +1,11 @@
 
 <table>
-  <tr>
-    <td>  Monday  </td>
-  </tr>
-  <tr>
-    <td>9:00 -- DDL </td>
-    <td>  office hours 5:00-6:00 </td>
-    <td>11:00 -- DSP</td>
-    <td>1:00 -- Work</td>
-    <td>4:00 -- AI</td>
-  </tr>
+  <tr><td>  Monday  </td></tr>
+  <tr><td>9:00 -- DDL </td></tr>
+  <tr><td> office hours 5:00-6:00 </td></tr>
+  <tr><td>11:00 -- DSP</td></tr>
+  <tr><td>1:00 -- Work</td></tr>
+  <tr><td>4:00 -- AI</td></tr>
 </table>
 ---
 * Tuesday
