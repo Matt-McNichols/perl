@@ -1,8 +1,8 @@
 
 <table>
-  <tr><td>  Monday  </td></tr>
+  <tr><th>  Monday  </th></tr>
   <tr><td><p>9:00 -- DDL <br />
-      * office hours 5:00-6:00</p></td></tr>
+                * office hours 5:00-6:00</p></td></tr>
   <tr><td>11:00 -- DSP</td></tr>
   <tr><td>1:00 -- Work</td></tr>
   <tr><td>4:00 -- AI</td></tr>
