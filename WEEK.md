@@ -6,9 +6,7 @@
   <tr><td>11:00 -- DSP</td></tr>
   <tr><td>1:00 -- Work</td></tr>
   <tr><td>4:00 -- AI</td></tr>
-</table>
----
-* Tuesday
+  <tr><th>  Tuesday  </th></tr>
   * 9:30 -- WSS
     * 2-3 pages public service announcement
       * print out 20 times I think
@@ -44,5 +42,4 @@ TODO:
 * DDL lab 2 due tuesday
 * setup openvpn for work
 * get groceries
-* 
 * schedule physical
