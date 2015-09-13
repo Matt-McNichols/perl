@@ -4,13 +4,11 @@
     <td>  Monday  </td>
   </tr>
   <tr>
-    <td>
-      * 9:00 -- DDL
-        * office hours 5:00-6:00
-      * 11:00 -- DSP
-      * 1:00 -- Work
-      * 4:00 -- AI
-    </td>
+    <td>9:00 -- DDL </td>
+    <td>  office hours 5:00-6:00 </td>
+    <td>11:00 -- DSP</td>
+    <td>1:00 -- Work</td>
+    <td>4:00 -- AI</td>
   </tr>
 </table>
 ---
