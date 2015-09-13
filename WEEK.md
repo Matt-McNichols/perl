@@ -1,12 +1,18 @@
 
----
-* Monday
-  * 9:00 -- DDL
-    * office hours 5:00-6:00
-  * 11:00 -- DSP
-    *  email meyers about ET
-  * 4:00 -- AI
-
+<table>
+  <tr>
+    <td>  Monday  </td>
+  </tr>
+  <tr>
+    <td>
+      * 9:00 -- DDL
+        * office hours 5:00-6:00
+      * 11:00 -- DSP
+      * 1:00 -- Work
+      * 4:00 -- AI
+    </td>
+  </tr>
+</table>
 ---
 * Tuesday
   * 9:30 -- WSS
@@ -25,7 +31,6 @@
 ---
 * Thursday
   * 9:30 -- WSS
-    * Rest of the comments are due
   * 1:00 -- DDL
 
 ---
@@ -35,15 +40,15 @@
   * 1:00 Work
   * 4:00 -- AI
     * Assignment 2 due in class
-
+<\table>
 ---
 TODO:
 
-* AI assignment due
-* AI office hours are at some point
-* DSP problem set 3 due friday
-* read psa paper x20 by thursday
-* DDL lab 2 due next tuesday
+* DSP midterm Monday 9/21/15
+* AI assignment due friday
+* What is the HW for writing
+* DDL lab 2 due tuesday
+* setup openvpn for work
+* get groceries
+* 
 * schedule physical
-* email meyers about extended time
-* find bluetooth speaker
