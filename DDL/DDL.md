@@ -65,8 +65,9 @@ Week 2:
 <body> 
 <ul>
 <li> Lecture 9/14/15:</li>
-<li>low power lab</li>
+    <li><a href="http://ecee.colorado.edu/~ecen3000/lecture/l4.pdf">lecture 9/14/15: Power Lab</a></li>
   <ul>
+  <li>Lab three is an interrupt</li>
   <li>2004--AMD make multicore microprocessor</li>
   <li>took intel two years to catch up</li>
   <li>power grows exponentially with performance</li>
@@ -81,13 +82,8 @@ Week 2:
     <li>Screen waisting power. E-ink screen doesnt consume power to display (Kindle)</li>
     <li>CMOS transistor used as an inverter</li>
     <li>capacitor does not consume power the transistors are not a perfect switch</li>
-    <li>An absolute URL: <a href="http://www.w3schools.com">W3Schools</a></li>
+
     </ul>
   </ul>
 </ul>
 </body>
-    <html>
-    <body>
-    
-    </body>
-    </html>
