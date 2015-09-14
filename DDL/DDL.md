@@ -85,6 +85,8 @@ Week 2:
   <li>use different modes of operation: "run","sleep", ect</li>
   <li>use interrupts to allow microprocessor to rest while not needed</li>
   <li>ARM insterrupt inst:  __WFE[], __WFI, use sleep on exit feature</li>
+  <li>PMU(power management unit) off chip unit has ability to store crucial data</li>
+  <li>PCON: Controls deep sleep vs soft sleep</li>
   </ul>
 </ul>
 </body>
