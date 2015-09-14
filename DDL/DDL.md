@@ -79,6 +79,8 @@ Week 2:
     <li>The big issue is battery life</li>
     <li>Battery storage has not improved much</li>
     <li>Screen waisting power. E-ink screen doesnt consume power to display (Kindle)</li>
+    <li>CMOS transistor used as an inverter</li>
+    <li>capacitor does not consume power the transistors are not a perfect switch</li>
     </ul>
   </ul>
 </ul>
