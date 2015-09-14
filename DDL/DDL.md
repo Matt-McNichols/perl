@@ -84,7 +84,7 @@ Week 2:
     <li>http://ecee.colorado.edu/~ecen3000/lecture/l4.pdf</li>
     <html>
     <body>
-    <a href="http://ecee.colorado.edu/~ecen3000/lecture/l4.pdf">Power lab</a>
+    <p>An absolute URL: <a href="http://www.w3schools.com">W3Schools</a></p>
     </body>
     <html>
     </ul>
