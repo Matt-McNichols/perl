@@ -61,6 +61,8 @@ Week 2:
               * PC=(#intr*4 + 0x40)
             * check the system clock every time interrupt occurs
             * freq= 1/(Cnew-Cold) 
+ 
+<body> 
 <ul>
 <li> Lecture 9/14/15:</li>
 <li>low power lab</li>
@@ -76,5 +78,8 @@ Week 2:
     <li>now down to 1W of power -> 180 mW</li>
     <li>The big issue is battery life</li>
     <li>Battery storage has not improved much</li>
+    <li>Screen waisting power. E-ink screen doesnt consume power to display (Kindle)</li>
+    </ul>
   </ul>
 </ul>
+</body>
