@@ -61,3 +61,20 @@ Week 2:
               * PC=(#intr*4 + 0x40)
             * check the system clock every time interrupt occurs
             * freq= 1/(Cnew-Cold) 
+<ul>
+<li> Lecture 9/14/15:</li>
+<li>low power lab</li>
+  <ul>
+  <li>2004--AMD make multicore microprocessor</li>
+  <li>took intel two years to catch up</li>
+  <li>power grows exponentially with performance</li>
+  <li>power density (W/cm^2)</li>
+  <li>cfv^2</li>
+  <li>Dell's Law:  cooling and packaging cost after >40W: 1$->1W </li>
+    <ul>
+    <li>1 to 1 relationship between power and cooling</li>
+    <li>now down to 1W of power -> 180 mW</li>
+    <li>The big issue is battery life</li>
+    <li>Battery storage has not improved much</li>
+  </ul>
+</ul>
