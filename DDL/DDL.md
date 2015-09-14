@@ -88,5 +88,11 @@ Week 2:
   <li>PMU(power management unit) off chip unit has ability to store crucial data</li>
   <li>PCON: Controls deep sleep vs soft sleep</li>
   </ul>
+<li>Problem:  Lose control of the bord: when you put M0 into deep sleep, they disable the JTAG port</li>
+  <ul>
+  <li> There is a way to reset the bord</li>
+  <li> 2 firmwares: your code and bootloader (Read the couple PP) </li>
+  </ul>
+<li> common mistake: how to measure the power consumption. put 1 ohm R between cpu and board because we cannot measure the current directly.  know input voltage so, p=v^2/R but that is the power accross the resistor. Do v/r and get a current, p=(Vdd-Vr)I</li>
 </ul>
 </body>
