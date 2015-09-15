@@ -17,6 +17,7 @@
 
 
 <body>
-<a href="http://ecee.colorado.edu/~fmeyer/class/ecen4632/prepmidterm1.pdf">Test 1 Review</a>
-<a href="http://mathworld.wolfram.com/GeometricSeries.html">Geometric Series</a>
+<p><a href="http://ecee.colorado.edu/~fmeyer/class/ecen4632/prepmidterm1.pdf">Test 1 Review</a></p>
+<p><a href="http://mathworld.wolfram.com/GeometricSeries.html">Geometric Series</a></p>
+
 </body>
