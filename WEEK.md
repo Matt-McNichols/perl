@@ -39,6 +39,8 @@
 TODO:
 
 * schedule physical
+* finish AI HW
+* do WSS blog post
 * DSP midterm Monday 9/21/15
 * dsp office hours WED 6:00-7:00 ECOT 251
 * DSP review problems
