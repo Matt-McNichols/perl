@@ -36,10 +36,13 @@
 ---
 TODO:
 
-* DSP midterm Monday 9/21/15
-* AI assignment due friday
-* What is the HW for writing
-* DDL lab 2 due tuesday
-* setup openvpn for work
-* get groceries
 * schedule physical
+* DSP midterm Monday 9/21/15
+* dsp office hours WED 6:00-7:00 ECOT 251
+* DSP review problems
+* AI assignment due friday
+* blog post for WSS
+* Final PSA paper due tuesday
+* DDL lab 3 due tuesday
+* setup openvpn for work
+
