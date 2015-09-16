@@ -7,6 +7,7 @@
   <tr><td>1:00 -- Work</td></tr>
   <tr><td>4:00 -- AI</td></tr>
   <tr><th>  Tuesday  </th></tr>
+</table>  
   * 9:30 -- WSS
     * 2-3 pages public service announcement
       * print out 20 times I think
@@ -32,7 +33,8 @@
   * 1:00 Work
   * 4:00 -- AI
     * Assignment 2 due in class
-<\table>
+
+
 ---
 TODO:
 
