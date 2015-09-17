@@ -67,3 +67,6 @@
     * tries to make a connection to the reader’s life
       * how terrible it is when the paper towel dispenser is empty 
 
+<body>
+<p> we are behind until 9/29 <br> final draft  and Lakoff due Tues, the 22nd</p>
+<p> we are going outside today</p>
