@@ -19,6 +19,9 @@
 <body>
 <p><a href="http://ecee.colorado.edu/~fmeyer/class/ecen4632/prepmidterm1.pdf">Test 1 Review</a><br/>
 <a href="http://mathworld.wolfram.com/GeometricSeries.html">Geometric Series</a><br/>
-<a href="http://people.math.sc.edu/girardi/m142/handouts/10sTaylorPolySeries.pdf">common Taylor Series</a><br/></p>
+<a href="http://people.math.sc.edu/girardi/m142/handouts/10sTaylorPolySeries.pdf">common Taylor Series</a><br/>
+<a href="https://www.wyzant.com/resources/lessons/math/trigonometry/eulers-formula-trig-identities">Eulers formula to derive trig identities</a><br/>
+
+</p>
 
 </body>
