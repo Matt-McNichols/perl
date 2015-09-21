@@ -21,6 +21,7 @@
 <a href="http://mathworld.wolfram.com/GeometricSeries.html">Geometric Series</a><br/>
 <a href="http://people.math.sc.edu/girardi/m142/handouts/10sTaylorPolySeries.pdf">common Taylor Series</a><br/>
 <a href="https://www.wyzant.com/resources/lessons/math/trigonometry/eulers-formula-trig-identities">Eulers formula to derive trig identities</a><br/>
+<a href="http://www.mechmat.ethz.ch/Lectures/tables.pdf">Common Z transform pairs</a><br/>
 
 </p>
 
