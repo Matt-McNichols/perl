@@ -70,3 +70,8 @@
 <body>
 <p> we are behind until 9/29 <br> final draft  and Lakoff due Tues, the 22nd</p>
 <p> we are going outside today</p>
+</body>
+
+<body>
+<a href="https://docs.google.com/document/d/1sWPiCfT62xysRIMLSjQG8YpUPOi9JnzHjwmy-Pu4RgA/editf"> Lecture 9/22/14</a>
+</body>
