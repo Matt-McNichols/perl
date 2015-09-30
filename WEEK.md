@@ -45,6 +45,12 @@ TODO:
 * dsp office hours WED 6:00-7:00 ECOT 251
 * DSP hw due next Monday 
 * Work:
+  * running sim that points to NVME_luis dev and uses that .do file
+    * sim is using the .mem file from the working simulation
+      * if success, then the .mem file is the problem
+      * if fail, then the problem is in in the NVME_dev design <adress translations>
   * figure out why cq is not being written to (.mem)
   * make adresses dynamic
   * create MSI ISR
+  * clean up print statements
+    
