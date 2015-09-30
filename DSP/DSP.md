@@ -22,7 +22,7 @@
 <a href="http://people.math.sc.edu/girardi/m142/handouts/10sTaylorPolySeries.pdf">common Taylor Series</a><br/>
 <a href="https://www.wyzant.com/resources/lessons/math/trigonometry/eulers-formula-trig-identities">Eulers formula to derive trig identities</a><br/>
 <a href="http://www.mechmat.ethz.ch/Lectures/tables.pdf">Common Z transform pairs</a><br/>
-
+<a href="http://ecee.colorado.edu/~fmeyer/class/ecen4632/ecen4632pbset5.pdf">Problem Set 5</a><br/>
 </p>
 
 </body>
