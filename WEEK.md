@@ -52,6 +52,10 @@ TODO:
     * use howto script to point to the .mem file inside the project that you point to
   * figure out why cq is not being written to (.mem)
   * make adresses dynamic
+    * added a global_param.sv file
+    * remove the passing of parameters between packages
+    * add parameters for the host addressing fields
+    * 
   * create MSI ISR
   * clean up print statements
     
