@@ -23,6 +23,7 @@
 <a href="https://www.wyzant.com/resources/lessons/math/trigonometry/eulers-formula-trig-identities">Eulers formula to derive trig identities</a><br/>
 <a href="http://www.mechmat.ethz.ch/Lectures/tables.pdf">Common Z transform pairs</a><br/>
 <a href="http://ecee.colorado.edu/~fmeyer/class/ecen4632/ecen4632pbset5.pdf">Problem Set 5</a><br/>
+<a href="https://github.com/Matt-McNichols/perl/blob/master/DSP/test2/dsp_test_2.pdf">TEST_2_LECTURES</a>
 </p>
 
 </body>
