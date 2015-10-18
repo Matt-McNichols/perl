@@ -6,6 +6,11 @@ from scipy import signal
 import scipy.io.wavfile
 import matplotlib.pyplot as plt
 
+# This function does a mirror extension of the signal x_array
+# It then calculates the output(y) after input(x_array) passes 
+# Through the filter(h_filter) 
+# After computing the output(y) this function downsamples 
+# (y) by a factor of 2
 def filtdec(x_array, h_filter, downsample):  
     
     q = []    
@@ -24,6 +29,11 @@ def filtdec(x_array, h_filter, downsample):
         q.append(y[2*i])
     return q
 
+
+# This function first upsamples x_array by 2 
+# This function then does a mirror extension of the upsampled signal
+# It then passes the upsampled array through a filter(f)
+# This function returns the output of the filtered signal
 def upfilt(x_array, h_filter, upsample):
     
     q = []
