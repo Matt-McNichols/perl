@@ -1,6 +1,7 @@
+<!DOCTYPE html>
 <html>
 <head>
-<title><h4>Oral Presentation</h4></title>
+<h4>Oral Presentation</h4>
 </head>
 
 <h4> Requirements </h4>
