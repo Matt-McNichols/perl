@@ -1,6 +1,6 @@
 Problem 1: Prior sampling
 ['a.  P(c = True): ', 0.47999999999999998]
-['b.  P(c = True | rain = True): ', 0.54545454545454541]
+['b.  P(c = True | rain = True): ', 0.75]
 ['c.  P(s = True | w = True): ', 0.45454545454545453]
 ['d.  P(s = True | c = True, w = True): ', 0.16666666666666666]
 Problem 2: Rejection sampling

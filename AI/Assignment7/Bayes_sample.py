@@ -239,7 +239,7 @@ def main():
     printV("Problem 1: Prior sampling",2);
     cloudy_marg = ps.prior_marginal_prob("cloudy");
     printV(["a.  P(c = True): ",cloudy_marg[0]],2);
-    cond_returned = ps.prior_conditional_prob({'cloudy':True,},[{'wet':True}]);
+    cond_returned = ps.prior_conditional_prob({'cloudy':True,},[{'rain':True}]);
     printV(["b.  P(c = True | rain = True): ",cond_returned[0]],2);
     cond_returned = ps.prior_conditional_prob({'sprinkler':True,},[{'wet':True}]);
     printV(["c.  P(s = True | w = True): ",cond_returned[0]],2);
