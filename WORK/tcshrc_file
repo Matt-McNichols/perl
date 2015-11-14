@@ -1,0 +1,78 @@
+xset b 0
+set autologout=0
+#source ~/scripts/vncProjectSetup.sh
+setenv CVSROOT /project/IP_verilog/CVS_ALL_PROJECTS/
+#source /tools/Xilinx/10.1/EDK/settings32.csh
+#source /tools/Xilinx/10.1/ISE/settings32.csh
+#setenv LD_LIBRARY_PATH $LMC_HOME/lib/amd64.lib:$LD_LIBRARY_PATH
+#source ~/scripts/settingsISE.csh
+#source ~/scripts/settingsEDK.csh
+
+set autolist set color set colorcat
+set autologout = 0
+set autolist = ambiguous
+set complete = enhance
+set autoexpand
+
+# Set License variable
+#setenv LM_LICENSE_FILE 2084@nova:5281@saturn:27000@earth:2100@titan
+setenv LM_LICENSE_FILE 2084@192.168.0.5:5281@192.168.0.146:27000@192.168.0.222:2100@192.168.0.24
+
+# Add my scripts directories
+setenv PATH ./:~/scripts:${PATH}
+
+set autolist set color set colorcat
+
+alias ls 'ls --color=auto'
+alias ll 'ls -ltr'
+alias la 'ls -a'
+alias vi 'vim'
+
+#alias vic "vim -c 'set ic'"
+#alias oav 'vi `find . -type f -name "*.v"` -p'
+alias vv 'vsim -lic_no_lnl vsim.wlf &'
+alias view 'vsim -lic_no_lnl '
+
+# mattm -- alias
+alias svSim './scripts/runsim.csh -v 10.4c -d ~/verification/NVME_BFM_HOST
+
+#alias vncsetup 'vncserver -geometry 1920x1040 :60; vncserver -geometry 1920x1040 :61; vncserver -geometry 1920x1040 :62; vncserver -geometry 1920x1040 :63;'
+
+#alias cvs?  'cvs -n -q update -d  | grep -P "^[M,U,C]" | sort'
+#alias cvs?! 'cvs -n -q update -A -d  | grep -P "^[M,U,C]" | sort'
+#alias cvs!  'cvs -n -q update -A -d | grep -P "^[?]" | sort'
+alias cvs?  'cvs -n -q update -d    |& grep -P "(^[M,U,C] |New directory|Merging)"  | sort'
+alias cvs?! 'cvs -n -q update -d -A |& grep -P "(^[M,U,C] |New directory|Merging)"  | sort'
+alias cvs!  'cvs -n -q update -d -A |& grep -P "(^[?]|New directory|Merging)"       | sort'
+alias cvsd  'cvs diff --side-by-side'
+
+alias svn? 'svn stat -u | sort'
+alias svn* 'svn log -r BASE:HEAD'
+alias svndtip 'svn diff -r HEAD:BASE'
+alias svndmeld "svn diff --diff-cmd='meld'"
+alias svndmeldtip "svn diff -r HEAD:BASE --diff-cmd='meld'"
+
+alias ps?   'ps -ef | grep -v grep | grep'
+alias dus   'du -sh * | sort -h'
+alias cd..  'cd ../'
+
+alias whatprovides 'rpm -qa | grep '
+
+alias asetup 'source ~/scripts/aSetupTools.csh'
+alias qopen 'quartus --64bit *.qpf &'
+
+alias dsh 'ssh -Y 192.168.0.2 -l phiggins'
+alias nsh 'ssh -Y 192.168.0.5 -l phiggins'
+alias fwsh 'ssh -Y 192.168.0.42 -l default'
+alias esh 'ssh -Y 192.168.0.222 -l phiggins'
+alias satsh 'ssh -Y 192.168.0.146 -l phiggins'
+alias tsh 'ssh -Y 192.168.0.24 -l phiggins'
+alias osh 'ssh -Y 192.168.0.15 -l default'
+
+alias ovpn 'sudo openvpn ~/client_0724_phiggins.ovpn'
+alias nhmnt 'sshfs phiggins@192.168.0.5: ~/nhome_mount'
+alias npmnt 'sshfs phiggins@192.168.0.5:/raid_6/nproject ~/nproject_mount'
+
+alias X15.1	'source /ntools/Xilinx/Vivado/2015.1/settings64.csh && setenv XILINX /ntools/Xilinx/Vivado/2015.1/data && setenv PLATFORM lin64'
+alias X15.2	'source /ntools/Xilinx/Vivado/2015.2/settings64.csh && setenv XILINX /ntools/Xilinx/Vivado/2015.2/data && setenv PLATFORM lin64'
+alias X15.3	'source /ntools/Xilinx/Vivado/2015.3/settings64.csh && setenv XILINX /ntools/Xilinx/Vivado/2015.3/data && setenv PLATFORM lin64'
