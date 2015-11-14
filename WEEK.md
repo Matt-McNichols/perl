@@ -38,15 +38,24 @@
 ---
 TODO:
 
-* schedule physical
-* finish AI HW
-* do WSS blog post
-* DSP midterm Monday 9/21/15
+* physical next wednesday
+* AI homework next wednesday
+* WSS pick out article by next tuesday
+* AI midterm Monday 10/9/15
 * dsp office hours WED 6:00-7:00 ECOT 251
-* DSP review problems
-* AI assignment due friday
-* blog post for WSS
-* Final PSA paper due tuesday
-* DDL lab 3 due tuesday
-* setup openvpn for work
-
+* DSP hw due next Monday 
+* Work:
+  * running sim that points to NVME_luis dev and uses that .do file
+    * sim is using the .mem file from the working simulation
+        * if success, then the .mem file is the problem
+        * if fail, then the problem is in in the NVME_dev design <adress translations>
+    * use howto script to point to the .mem file inside the project that you point to
+  * figure out why cq is not being written to (.mem)
+  * make adresses dynamic
+    * added a global_param.sv file
+    * remove the passing of parameters between packages
+    * add parameters for the host addressing fields
+    * 
+  * create MSI ISR
+  * clean up print statements
+    
