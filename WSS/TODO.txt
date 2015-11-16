@@ -1,0 +1,26 @@
+* insert addition example
+* use hardware design to teach math through a physical representation
+    * Allows the teacher to use a consistant analogy for many subjects
+    * Build math from the ground up
+    * Teach base representation first
+    * how are you going to represent values greater than the base representation.
+    * How are you going to represent negative numbers
+    * Introduce ideas like overflow early because it makes sense in the analogy
+
+* source 1:
+    https://www.whitehouse.gov/blog/2013/12/09/don-t-just-play-your-phone-program-it
+    *   “Don’t just play on your phone, program it,” said President Obama
+    *   An understanding of coding helps people learn new strategies for solving
+        problems and harness the power of computers to realize their own visions,
+        whatever they may be.
+
+* source 2:
+http://www.nytimes.com/2014/05/11/us/reading-writing-arithmetic-and-lately-coding.html?_r=0
+    *   Parents love the idea of giving children something to do with computers that
+        they see as productive, Mr. Pearce said. “We have any number of parents who say,
+        ‘I can’t take my kid playing one more hour of video games,’ ” he said.
+        But if the children are exploring coding, the parents tell him, " ‘I can live
+        with that all night long.’ ”
+
+* Info Graphic:
+http://previews.123rf.com/images/macrovector/macrovector1406/macrovector140600655/29455355-Software-development-workflow-process-coding-testing-analysis-infographic-vector-illustration-Stock-Vector.jpg
