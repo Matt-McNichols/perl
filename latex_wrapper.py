@@ -65,33 +65,9 @@ linkcolor=blue!60,
         # tags for setting up the output file
         if((("-t") in o) and (title_bool==False))is True:
         # -t stands for title
-            header= '''
-\\documentclass{report}
-\usepackage{geometry}
-\usepackage{xcolor}
-\usepackage{hyperref}
-\usepackage{graphicx}
-\usepackage{float}
-\usepackage{amsmath}
-\usepackage{subcaption}
-\usepackage{caption}
- %\usepackage{todonotes}
+            title = a.replace('_',' ');
+            header = header.replace('Default Title',title);
 
-\graphicspath{ {images/}}
-\hypersetup{
-   colorlinks=true,
-   linktoc=all,
-   linkcolor=blue!60,
-}
-\\geometry{legalpaper, portrait, margin=0.5in}
-\\title{'''+a.replace('_',' ')+'''}
-\\author{Matt McNichols}
-\\date{\\today}
-
-\\begin{document}
-\\maketitle
-\\tableofcontents
-'''
         elif((("-t") in o) and (title_bool==True))is True:
                 print 'Error: title already given';
                 sys.exit(2);
