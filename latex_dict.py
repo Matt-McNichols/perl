@@ -71,9 +71,6 @@ This is where you will describe the document as a whole
             if (tag_open)in line:
                 subsection = '\n\\section{'+line[com_tag_off:].strip()+'}\n';
                 file_text = file_text + subsection;
-            # check for \href links
-            elif ('\\href')in line:
-                file_text = file_text+line;
             else:
                 # write as a latex line if there are more than 2 chars
                 if((tag_close not in line )and (verbatim==False)) is True:
