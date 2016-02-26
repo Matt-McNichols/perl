@@ -59,11 +59,11 @@ This is where you will describe the document as a whole
             com_off = len(com_in);
             com_tag_off = len(tag_open);
             # check verbatim status
-            if((verbatim == False)and(("begin{verbatim}")in line))is True:
+            if((verbatim == False)and(("begin{lstlisting}")in line))is True:
                 com_idx = line.find(com_in);
                 line = line[(com_idx+com_off):];
                 verbatim=True;
-            if((verbatim == True)and(("end{verbatim}")in line))is True:
+            if((verbatim == True)and(("end{lstlisting}")in line))is True:
                 verbatim=False;
 
             # look for special latex commands
@@ -71,6 +71,9 @@ This is where you will describe the document as a whole
             if (tag_open)in line:
                 subsection = '\n\\section{'+line[com_tag_off:].strip()+'}\n';
                 file_text = file_text + subsection;
+            # check for \href links
+            elif ('\\href')in line:
+                file_text = file_text+line;
             else:
                 # write as a latex line if there are more than 2 chars
                 if((tag_close not in line )and (verbatim==False)) is True:

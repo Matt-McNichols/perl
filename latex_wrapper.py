@@ -37,8 +37,9 @@ def main():
 \usepackage{amsmath}
 \usepackage{subcaption}
 \usepackage{caption}
-%\usepackage{todonotes}
-
+\usepackage{mathtools}
+\usepackage{todonotes}
+\usepackage{listings}
 
 \graphicspath{ {images/}}
 \hypersetup{
@@ -47,13 +48,25 @@ linktoc=all,
 linkcolor=blue!60,
 }
 \\geometry{legalpaper, portrait, margin=0.5in}
+\\lstset{
+  basicstyle=\\small\\ttfamily,
+  columns=flexible,
+  breaklines=true
+}
+
+
 \\title{Default Title}
 \\author{Matt McNichols}
 \\date{\\today}
 
+\\DeclarePairedDelimiter\\floor{\\lfloor}{\\rfloor}
+
+
+
 \\begin{document}
 \\maketitle
 \\tableofcontents
+\\listoffigures
 '''
     main_file=None;
     f_out = None;
