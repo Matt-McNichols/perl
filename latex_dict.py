@@ -49,7 +49,6 @@ class latex_wrapper(object):
         # make a new chapter for the file
         file_text = '''
 \\chapter{'''+name+'''}
-This is where you will describe the document as a whole
 
 '''
 

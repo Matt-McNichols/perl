@@ -1,23 +1,4 @@
-#!/usr/bin/python
-
-# input: list of input .txt file
-# output: .tex file
-
-# FIXME: make into class
-
-
-
-# Start of script
-import getopt, sys, math
-from latex_dict import latex_wrapper
-
-def main():
-    # comment out nav list until make refresh_list
-    try:
-        opts, args = getopt.getopt(sys.argv[1:], "p:m:o:t:c:")
-
-    except getopt.GetoptError as err:
-        # print help information and exit:
+# print help information and exit:
         print str(err)
         sys.exit(2)
 
@@ -30,7 +11,7 @@ def main():
     header= '''
 \\documentclass{report}
 \usepackage{geometry}
-\usepackage{xcolor}
+\usepackage[dvipsnames]{xcolor}
 \usepackage{hyperref}
 \usepackage{graphicx}
 \usepackage{float}
@@ -48,12 +29,21 @@ linktoc=all,
 linkcolor=blue!60,
 }
 \\geometry{legalpaper, portrait, margin=0.5in}
-\\lstset{
+\\lstdefinestyle{custom}{
   basicstyle=\\small\\ttfamily,
   columns=flexible,
-  breaklines=true
+  breaklines=true,
+  frame=single,
+  language= ,
+  keepspaces=true,
+  backgroundcolor=\\color{gray!20},
+  keywordstyle=\\bfseries\\color{purple!70!black},
+  identifierstyle=\color{black},
+  stringstyle=\color{orange},
+  commentstyle=\\color{green!40!black}
 }
 
+\\lstset{style=custom}
 
 \\title{Default Title}
 \\author{Matt McNichols}

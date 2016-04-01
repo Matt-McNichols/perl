@@ -68,29 +68,56 @@ def str_replace(txt_name,tag_open,tag_close):
     in_strRep = False;
     # check for a string replace block
     # if it exists grab all string replacements
-    f = open(txt_name,'r');
-    for line in f:
+    strRep_dict = {};
+    f_in = open(txt_name,'r');
+    for line in f_in:
         # check all 4 cases of tag
         if((in_strRep==False)and((com_tag[tag_open]+'$$$')in line))is True:
-            # line contains open tag
-            # set bool so replacement string will be added
             in_strRep=True;
         elif((in_strRep==True)and((com_tag[tag_open]+'$$$')in line))is True:
             # already in an open block
             # cant have another open
             sys.exit();
         elif((in_strRep==True)and((com_tag[tag_close])in line))is True:
-            # block tag is coming to a close
-            #f_out.write(line);
             in_strRep = False;
         elif(in_strRep==True)is True:
             # update the replacement dict
             # break line appart make str_orig the dict key and str_rep the dict value
             rep_idx = line.find('-->');
             str_orig = line[:rep_idx];
-            str_rep = line[rep_idx:];
-            print 'str_orig',str_orig;
-            print 'str_rep',str_rep;
+            str_rep = line[4+rep_idx:];
+            str_rep = str_rep.strip();
+            strRep_dict[str_orig] = str_rep;
+
+    # at this point all string replacements are stored in the dictionar
+    # now re write the txt file ommiting the string replace section and
+    # replacing the string in the dict throughout the rest of the file
+    lines = [];
+    in_strRep = False;
+    with open(txt_name) as f_in:
+        for line in f_in:
+            # replace all occurances of each string in strRep_dict
+            if((in_strRep==False)and((com_tag[tag_open]+'$$$')in line))is True:
+                in_strRep=True;
+            elif((in_strRep==True)and((com_tag[tag_open]+'$$$')in line))is True:
+                # already in an open block
+                # cant have another open
+                sys.exit();
+            elif((in_strRep==True)and((com_tag[tag_close])in line))is True:
+                in_strRep = False;
+            elif(in_strRep==False)is True:
+                for orig, rep in strRep_dict.iteritems():
+                    if orig in line:
+                        print line;
+                    line = line.replace(orig,rep);
+                lines.append(line);
+    in_strRep = False;
+    with open(txt_name,'w') as f_out:
+        for line in lines:
+            f_out.write(line);
+
+
+
 
 # look through each input file and copy tagged text into outupt file
 for o, a in opts:
@@ -100,6 +127,7 @@ for o, a in opts:
     elif o in ("-m"):
         print 'matlab tag';
         txt_file = grab_com(a,'m_open','m_close');
+        str_replace(txt_file,'m_open','m_close');
     elif o in ("-c"):
         print 'c tag';
         txt_file = grab_com(a,'c_open','c_close');
